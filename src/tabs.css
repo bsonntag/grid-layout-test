@@ -1,0 +1,47 @@
+/* TabList */
+
+.TabList {
+  display: flex;
+  list-style: none;
+  padding: 0 0.5em;
+  position: absolute;
+  top: 1em;
+  z-index: 2;
+}
+
+/* TabListItem */
+
+.TabListItem {
+  color: hsl(0, 0%, 0%);
+  padding: 1em 0.5em;
+  text-decoration: none;
+}
+
+.TabListItem:focus,
+.TabListItem:hover {
+  color: hsl(0, 0%, 40%);
+}
+
+/* Tabs */
+
+.Tabs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+.Tabs-panel {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  opacity: 1;
+  padding-top: 3em;
+  transition: opacity 200ms ease-in-out;
+}
+
+.Tabs-panel:target {
+  z-index: 1;
+}
+
+.Tabs-panel:not(:target) {
+  opacity: 0;
+}

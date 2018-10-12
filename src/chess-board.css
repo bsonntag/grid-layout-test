@@ -1,0 +1,43 @@
+.ChessBoard {
+  counter-reset: item;
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(8, minmax(auto, 4em));
+  justify-content: center;
+  text-align: center;
+}
+
+.ChessBoard::before {
+  content: '';
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  padding-bottom: 100%;
+  width: 0;
+}
+
+.ChessBoard > * {
+  background: peru;
+}
+
+.ChessBoard > :first-child {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.ChessBoard > ::before {
+  /* content: counter(item); */
+  counter-increment: item;
+}
+
+.ChessBoard > :nth-child(even):nth-child(-n+8),
+.ChessBoard > :nth-child(odd):nth-child(n+9):nth-child(-n+16),
+.ChessBoard > :nth-child(even):nth-child(n+17):nth-child(-n+24),
+.ChessBoard > :nth-child(odd):nth-child(n+25):nth-child(-n+32),
+.ChessBoard > :nth-child(even):nth-child(n+33):nth-child(-n+40),
+.ChessBoard > :nth-child(odd):nth-child(n+41):nth-child(-n+48),
+.ChessBoard > :nth-child(even):nth-child(n+49):nth-child(-n+56),
+.ChessBoard > :nth-child(odd):nth-child(n+57):nth-child(-n+64),
+.ChessBoard > :nth-child(even):nth-child(n+65):nth-child(-n+72),
+.ChessBoard > :nth-child(odd):nth-child(n+73):nth-child(-n+80) {
+  background: brown;
+}
