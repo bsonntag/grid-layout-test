@@ -1,0 +1,17 @@
+.Gallery {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(auto-fill, 100px);
+  justify-content: center;
+}
+
+.Gallery-photo--big {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+}
+
+.Gallery-photo--huge {
+  grid-column-end: span 3;
+  grid-row-end: span 3;
+}

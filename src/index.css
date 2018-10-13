@@ -1,5 +1,6 @@
 @import "./chess-board.css";
 @import "./color-grid.css";
+@import "./photo-gallery.css";
 @import "./tabs.css";
 
 * {
