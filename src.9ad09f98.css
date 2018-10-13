@@ -1,0 +1,135 @@
+.ChessBoard {
+  counter-reset: item;
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 1fr;
+  -ms-grid-columns: (minmax(auto, 4em))[8];
+      grid-template-columns: repeat(8, minmax(auto, 4em));
+  justify-content: center;
+  text-align: center;
+}
+
+.ChessBoard::before {
+  content: '';
+  -ms-grid-column: 1;
+  grid-column: 1 / 1;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+  padding-bottom: 100%;
+  width: 0;
+}
+
+.ChessBoard > * {
+  background: peru;
+}
+
+.ChessBoard > :first-child {
+  -ms-grid-column: 1;
+  grid-column: 1 / 1;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+}
+
+.ChessBoard > ::before {
+  /* content: counter(item); */
+  counter-increment: item;
+}
+
+.ChessBoard > :nth-child(even):nth-child(-n+8),
+.ChessBoard > :nth-child(odd):nth-child(n+9):nth-child(-n+16),
+.ChessBoard > :nth-child(even):nth-child(n+17):nth-child(-n+24),
+.ChessBoard > :nth-child(odd):nth-child(n+25):nth-child(-n+32),
+.ChessBoard > :nth-child(even):nth-child(n+33):nth-child(-n+40),
+.ChessBoard > :nth-child(odd):nth-child(n+41):nth-child(-n+48),
+.ChessBoard > :nth-child(even):nth-child(n+49):nth-child(-n+56),
+.ChessBoard > :nth-child(odd):nth-child(n+57):nth-child(-n+64),
+.ChessBoard > :nth-child(even):nth-child(n+65):nth-child(-n+72),
+.ChessBoard > :nth-child(odd):nth-child(n+73):nth-child(-n+80) {
+  background: brown;
+}
+.ColorGrid {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: 6em;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fill, 6em);
+  justify-content: center;
+  padding: 0 1em 1em;
+}
+
+.ColorGrid > * {
+  align-items: center;
+  border-radius: 1em;
+  box-shadow: 1px 2px 5px #0007;
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  text-align: center;
+}
+/* TabList */
+
+.TabList {
+  display: flex;
+  list-style: none;
+  padding: 0 0.5em;
+  position: absolute;
+  top: 1em;
+  z-index: 2;
+}
+
+/* TabListItem */
+
+.TabListItem {
+  color: hsl(0, 0%, 0%);
+  padding: 1em 0.5em;
+  text-decoration: none;
+}
+
+.TabListItem:focus,
+.TabListItem:hover {
+  color: hsl(0, 0%, 40%);
+}
+
+/* Tabs */
+
+.Tabs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.Tabs-panel {
+  -ms-grid-column: 1;
+  grid-column: 1 / 1;
+  -ms-grid-row: 1;
+  grid-row: 1 / 1;
+  opacity: 1;
+  padding-top: 3em;
+  transition: opacity 200ms ease-in-out;
+}
+
+.Tabs-panel:target {
+  z-index: 1;
+}
+
+.Tabs-panel:not(:target) {
+  opacity: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: beige;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+body, ul {
+  margin: 0;
+  padding: 0;
+}
