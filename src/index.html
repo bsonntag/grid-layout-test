@@ -25,6 +25,12 @@
         Photo gallery
       </a>
     </li>
+
+    <li>
+      <a role="tab" class="TabListItem" href="#circle" aria-controls="circle">
+        Circle
+      </a>
+    </li>
   </ul>
 
   <div class="Tabs" aria-live="polite">
@@ -128,6 +134,24 @@
         <img class="Gallery-photo" src="https://picsum.photos/100?random=58">
         <img class="Gallery-photo" src="https://picsum.photos/100?random=05">
         <img class="Gallery-photo" src="https://picsum.photos/100?random=06">
+      </div>
+    </div>
+
+    <div role="tabpanel" class="Tabs-panel" id="circle">
+      <input id="circle-toggle" class="CircleToggle" type="checkbox">
+      <div class="Circle">
+        <div class="Circle-item Circle-a"></div>
+        <div class="Circle-item Circle-b"></div>
+        <div class="Circle-item Circle-c"></div>
+        <div class="Circle-item Circle-d"></div>
+        <div class="Circle-item Circle-e"></div>
+        <div class="Circle-item Circle-f"></div>
+        <div class="Circle-item Circle-g"></div>
+        <div class="Circle-item Circle-h"></div>
+
+        <label class="CircleToggleLabel" for="circle-toggle">
+          Animate
+        </label>
       </div>
     </div>
   </div>

@@ -1,0 +1,70 @@
+@keyframes spread {
+  from {
+    grid-gap: 1em;
+  }
+
+  to {
+    grid-gap: 2em;
+  }
+}
+
+.Circle {
+  align-content: center;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(8, 40px);
+  grid-template-rows: repeat(8, 40px);
+  justify-content: center;
+  min-height: calc(100vh - var(--tab-list-height));
+  padding-bottom: var(--tab-list-height);
+}
+
+.Circle-item {
+  background: moccasin;
+  border-radius: 1em;
+  box-shadow: 1px 1px 5px #0007;
+  grid-column-end: span 2;
+  grid-row-end: span 2;
+  position: relative;
+}
+
+.Circle-a,
+.Circle-h {
+  grid-column-start: 4;
+}
+
+.Circle-b,
+.Circle-f {
+  grid-column-start: 2;
+}
+
+.Circle-c,
+.Circle-g{
+  grid-column-start: 6;
+}
+
+.Circle-d {
+  grid-column-start: 1;
+}
+
+.Circle-e {
+  grid-column-start: 7;
+}
+
+/* Circle toggle */
+
+.CircleToggle {
+  display: none;
+  visibility: hidden;
+}
+
+.CircleToggle:checked + .Circle {
+  animation: spread 3s ease-in-out infinite alternate;
+}
+
+.CircleToggleLabel {
+  bottom: 1em;
+  cursor: pointer;
+  left: 1em;
+  position: absolute;
+}
