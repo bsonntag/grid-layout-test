@@ -1,5 +1,9 @@
 /* TabList */
 
+:root {
+  --tab-list-height: 3em;
+}
+
 .TabList {
   display: flex;
   list-style: none;
@@ -34,7 +38,7 @@
   grid-column: 1 / 1;
   grid-row: 1 / 1;
   opacity: 1;
-  padding-top: 3em;
+  padding-top: var(--tab-list-height);
   transition: opacity 200ms ease-in-out;
 }
 
