@@ -1,10 +1,6 @@
 @keyframes spread {
-  from {
-    grid-gap: 1em;
-  }
-
   to {
-    grid-gap: 2em;
+    grid-gap: 1.8em;
   }
 }
 
@@ -12,8 +8,8 @@
   align-content: center;
   display: grid;
   grid-gap: 1em;
-  grid-template-columns: repeat(8, 40px);
-  grid-template-rows: repeat(8, 40px);
+  grid-template-columns: repeat(8, calc(calc(100vmin - var(--tab-list-height) - 8 * 2em) / 8));
+  grid-template-rows: repeat(8, calc(calc(100vmin - var(--tab-list-height) - 8 * 2em) / 8));
   justify-content: center;
   min-height: calc(100vh - var(--tab-list-height));
   padding-bottom: var(--tab-list-height);
@@ -67,4 +63,9 @@
   cursor: pointer;
   left: 1em;
   position: absolute;
+}
+
+.CircleToggleLabel:focus,
+.CircleToggleLabel:hover {
+  color: hsl(0, 0%, 40%);
 }
